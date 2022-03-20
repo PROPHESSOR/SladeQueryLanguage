@@ -1,4 +1,6 @@
-## SELECT (DESELECT)
+## Query Examples
+
+### SELECT (DESELECT)
 
 - select lines where index=3
 - select lines where id=3
@@ -7,7 +9,7 @@
 - select things where x=32 or x=64
 - deselect things
 
-## UPDATE
+### UPDATE
 
 - update lines set textureMiddle=FLAT09 where id=3
   - textureMiddle1 - front side, textureMiddle2 - back side, textureMiddle - both sides (any side)
@@ -15,13 +17,13 @@
 - update things set type=16 y=10 where x=3
 - update sectors set textureCeiling=FLAT12 where textureFloor=FLAT12
 
-## DELETE
+### DELETE
 
 - delete things
 - delete things where type=1
 - delete sectors where textureFloor=- and textureCeiling=-
 
-## COUNT
+### COUNT
 
 - count things where type=1
 - count lines
