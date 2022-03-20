@@ -1,3 +1,27 @@
+# (G)SQL - (G)Slade Query Language
+
+## Query Structure
+
+- `SELECT <subject> [WHERE <conditions>]` - Select subjects
+- `DESELECT <subject> [WHERE <conditions>]` - Deselect subjects
+- `UPDATE <subject> SET <key>=<value> [...<key>=<value>] [WHERE <conditions>]` - Change properties
+- `DELETE <subject> [WHERE <conditions>]` - Delete subjects
+
+Operators are case-insensitive, so you can type `SELECT`, `select`, `SeLeCt` or any variation.
+Property values are case-sensitive, so `UPDATE lines SET textureTop1=Flat02` will set front upper texture to `Flat02`, not `FLAT02`.
+
+### Subjects
+
+- vertexes
+- lines
+- sectors
+- things
+
+### Conditions
+
+Conditions have the following format: `<key>=<value>` and can be combined with `AND` & `OR` operators.
+
+For example, `SELECT vertexes WHERE x=32 OR x=64 OR x=128` or `DELETE things WHERE x=32 AND y=64`
 ## Query Examples
 
 ### SELECT (DESELECT)
