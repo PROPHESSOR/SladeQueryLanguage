@@ -27,3 +27,7 @@
 
 - count things where type=1
 - count lines
+
+## TODO
+
+- [ ] Support for `OR` & `AND` operators in `WHERE` block
