@@ -73,7 +73,7 @@ function parseQuery(query: string) {
 
       if (!shift) break;
 
-      if (!shift.includes('='))
+      if (!shift.includes('=') && !['not', 'or', 'and'].includes(shift.toLocaleLowerCase()))
         throw new Error(`Unknown condition "${shift}"! Conditions should have format key=value without spaces`);
 
       request.filter.push(shift);

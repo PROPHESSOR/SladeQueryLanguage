@@ -19,7 +19,7 @@ Property values are case-sensitive, so `UPDATE lines SET textureTop1=Flat02` wil
 
 ### Conditions
 
-Conditions have the following format: `<key>=<value>` and can be combined with `AND` & `OR` operators.
+Conditions have the following format: `<key>=<value>` and can be combined with `AND`, `OR` and `NOT` operators.
 
 For example, `SELECT vertexes WHERE x=32 OR x=64 OR x=128` or `DELETE things WHERE x=32 AND y=64`
 ## Query Examples
@@ -45,6 +45,7 @@ For example, `SELECT vertexes WHERE x=32 OR x=64 OR x=128` or `DELETE things WHE
 
 - delete things
 - delete things where type=1
+- delete things where not type=1
 - delete sectors where textureFloor=- and textureCeiling=-
 
 ### COUNT
