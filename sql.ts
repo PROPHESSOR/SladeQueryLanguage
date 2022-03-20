@@ -1,4 +1,17 @@
-const query = `select lines where id=1`;
+const REQUEST_TYPES = ['select', 'update', 'deselect', 'delete', 'count'] as const;
+type TRequestTypes = typeof REQUEST_TYPES[number];
+const REQUEST_SUBJECTS = ['vertexes', 'lines', 'sectors', 'things'] as const;
+type TRequestSubjects = typeof REQUEST_SUBJECTS[number];
+const REQUEST_SIDES = ['front', 'back', 'both'] as const;
+type TRequestSides = typeof REQUEST_SIDES[number];
+
+interface IRequest {
+  type: TRequestTypes | null;
+  subject: TRequestSubjects | null;
+  values?: string[];
+  filter: string[];
+  side?: TRequestSides;
+}
 
 function processQuery(query: string) {
   const request = parseQuery(query);
@@ -72,21 +85,6 @@ function parseQuery(query: string) {
 
 function tokenize(query: string) {
   return query.split(/\s+/);
-}
-
-const REQUEST_TYPES = ['select', 'update', 'deselect', 'delete', 'count'] as const;
-type TRequestTypes = typeof REQUEST_TYPES[number];
-const REQUEST_SUBJECTS = ['vertexes', 'lines', 'sectors', 'things'] as const;
-type TRequestSubjects = typeof REQUEST_SUBJECTS[number];
-const REQUEST_SIDES = ['front', 'back', 'both'] as const;
-type TRequestSides = typeof REQUEST_SIDES[number];
-
-interface IRequest {
-  type: TRequestTypes | null;
-  subject: TRequestSubjects | null;
-  values?: string[];
-  filter: string[];
-  side?: TRequestSides;
 }
 
 console.log(processQuery(eval('process.argv[2]')));
